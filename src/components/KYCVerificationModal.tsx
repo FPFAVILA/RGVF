@@ -346,23 +346,45 @@ export const KYCVerificationModal: React.FC<KYCVerificationModalProps> = ({
                 </div>
                 <h3 className="text-white font-bold text-base mb-2 text-center">Verificacao de Titularidade</h3>
                 <p className="text-gray-300 text-xs mb-3 text-center leading-relaxed">
-                  Faca um deposito minimo para confirmar que voce e o titular da conta PIX
+                  Para sua seguranca, precisamos confirmar que voce e o titular da conta
                 </p>
 
-                <div className="bg-accent/10 rounded-lg p-3 mb-3 border border-accent/30">
-                  <div className="text-accent text-2xl font-bold mb-1 text-center">R$ 4,90</div>
-                  <p className="text-gray-400 text-[10px] text-center">Deposito de verificacao</p>
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 mb-3">
+                  <div className="flex items-start gap-2">
+                    <Shield className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-blue-300 font-bold text-xs mb-1.5">Por que precisamos disso?</h4>
+                      <ul className="text-blue-200 text-[10px] leading-relaxed space-y-1">
+                        <li>• Confirmar titularidade da conta PIX</li>
+                        <li>• Proteger contra fraudes e roubos</li>
+                        <li>• Garantir seguranca nas transacoes</li>
+                        <li>• Medida obrigatoria para liberacao de saques</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-2.5 mb-3">
+                <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-3 mb-3">
                   <div className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-green-300 font-bold text-xs mb-1">O valor sera creditado</h4>
-                      <p className="text-green-200 text-[10px] leading-relaxed">
-                        Os R$ 4,90 serao adicionados ao seu saldo apos a verificacao
-                      </p>
+                      <h4 className="text-green-300 font-bold text-xs mb-1.5">Como funciona?</h4>
+                      <ul className="text-green-200 text-[10px] leading-relaxed space-y-1">
+                        <li>1. Faca um deposito de qualquer valor</li>
+                        <li>2. O valor sera creditado no seu saldo</li>
+                        <li>3. Os saques serao liberados automaticamente</li>
+                        <li>4. Voce podera sacar tudo, inclusive o deposito</li>
+                      </ul>
                     </div>
+                  </div>
+                </div>
+
+                <div className="bg-accent/10 border border-accent/30 rounded-lg p-2.5 mb-3">
+                  <div className="flex items-center justify-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-accent" />
+                    <p className="text-accent text-xs font-bold">
+                      Deposito de verificacao = Saques liberados
+                    </p>
                   </div>
                 </div>
 
@@ -375,12 +397,12 @@ export const KYCVerificationModal: React.FC<KYCVerificationModalProps> = ({
                 </button>
               </div>
 
-              <div className="bg-blue-500/10 rounded-lg p-2.5 border border-blue-500/30 mb-2">
+              <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-2.5">
                 <div className="flex items-start gap-2">
-                  <Shield className="w-3.5 h-3.5 text-blue-400 mt-0.5 flex-shrink-0" />
+                  <AlertCircle className="w-3.5 h-3.5 text-yellow-600 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-blue-200 text-[10px] leading-relaxed">
-                      Apos verificacao, voce podera sacar todo o seu saldo disponivel
+                    <p className="text-yellow-800 text-[10px] leading-relaxed font-medium">
+                      Processo rapido e seguro. Apos o deposito, voce podera sacar todo o seu saldo disponivel sem restricoes.
                     </p>
                   </div>
                 </div>
