@@ -38,12 +38,12 @@ export const WithdrawModal: React.FC<WithdrawModalProps> = ({
   const [showSuccess, setShowSuccess] = useState(false);
   const { keyboardHeight } = useKeyboardHeight();
 
-  const minWithdraw = 14.70;
+  const minWithdraw = 40.00;
   const maxWithdraw = balance;
 
   if (!isOpen) return null;
 
-  const requiresKYC = balance >= 14.70;
+  const requiresKYC = balance >= 40.00;
   const isKYCVerified = kycStatus?.isVerified || false;
   const needsKYCVerification = requiresKYC && !isKYCVerified;
 
@@ -313,7 +313,7 @@ export const WithdrawModal: React.FC<WithdrawModalProps> = ({
                 <span className="text-red-800 font-bold text-sm">Saldo Insuficiente</span>
               </div>
               <p className="text-red-700 text-sm">
-                Você precisa de pelo menos R$ 14,70 para sacar.
+                Você precisa de pelo menos R$ 40,00 para sacar.
                 Faltam R$ {(minWithdraw - balance).toFixed(2).replace('.', ',')}
               </p>
             </div>
@@ -349,7 +349,7 @@ export const WithdrawModal: React.FC<WithdrawModalProps> = ({
               
               {/* Valores sugeridos */}
               <div className="grid grid-cols-3 gap-2 mt-3">
-                {[14.70, Math.min(50, balance), balance].filter((val, index, arr) => val >= 14.70 && arr.indexOf(val) === index).map((value) => (
+                {[40.00, Math.min(100, balance), balance].filter((val, index, arr) => val >= 40.00 && arr.indexOf(val) === index).map((value) => (
                   <button
                     key={value}
                     type="button"
@@ -440,7 +440,7 @@ export const WithdrawModal: React.FC<WithdrawModalProps> = ({
               ) : balance < minWithdraw ? (
                 <div className="flex items-center justify-center gap-3">
                   <AlertTriangle className="w-5 h-5" />
-                  <span>Saldo Insuficiente (Mín. R$ 14,70)</span>
+                  <span>Saldo Insuficiente (Mín. R$ 40,00)</span>
                 </div>
               ) : (
                 <div className="flex items-center justify-center gap-3">
@@ -460,7 +460,7 @@ export const WithdrawModal: React.FC<WithdrawModalProps> = ({
               <div>
                 <h4 className="font-bold text-blue-800 mb-1 text-sm">Segurança</h4>
                 <ul className="text-blue-700 text-xs space-y-1">
-                  <li>• Valor mínimo: R$ 14,70</li>
+                  <li>• Valor mínimo: R$ 40,00</li>
                   <li>• Processamento: até 2 dias úteis</li>
                   <li>• Dados protegidos e criptografados</li>
                   <li>• Sem taxas via PIX</li>

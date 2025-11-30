@@ -33,7 +33,7 @@ export const AddBalanceModal: React.FC<AddBalanceModalProps> = ({
       if (suggestedAmount && suggestedAmount < 1) {
         setAmount('');
       } else {
-        const initialAmount = suggestedAmount && suggestedAmount >= 4.90 ? suggestedAmount : 4.90;
+        const initialAmount = suggestedAmount && suggestedAmount >= 14.70 ? suggestedAmount : 14.70;
         setAmount(initialAmount.toFixed(2).replace('.', ','));
       }
     }
@@ -105,7 +105,7 @@ export const AddBalanceModal: React.FC<AddBalanceModalProps> = ({
 
   const generatePix = async () => {
     const paymentAmount = parseFloat(amount.replace(',', '.'));
-    if (paymentAmount < 4.90) return;
+    if (paymentAmount < 14.70) return;
 
     try {
       await createPix(paymentAmount);
@@ -204,7 +204,7 @@ export const AddBalanceModal: React.FC<AddBalanceModalProps> = ({
                   />
                 </div>
                 <p className="text-sm text-gray-500 mt-1 text-center">
-                  Valor mínimo: R$ 4,90
+                  Valor mínimo: R$ 14,70
                 </p>
               </div>
 
@@ -252,7 +252,7 @@ export const AddBalanceModal: React.FC<AddBalanceModalProps> = ({
               {/* Botão Gerar PIX */}
               <button
                 onClick={generatePix}
-disabled={!amount || parseFloat(amount.replace(',', '.')) < 4.90 || loading}
+disabled={!amount || parseFloat(amount.replace(',', '.')) < 14.70 || loading}
                 className="w-full bg-accent text-white font-bold py-4 rounded-xl hover:bg-accent-hover transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-modern hover-lift active:scale-95 relative overflow-hidden"
                 style={{ touchAction: 'manipulation' }}
               >
